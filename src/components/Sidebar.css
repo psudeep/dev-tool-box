@@ -1,0 +1,158 @@
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background-color: #34495e;
+  border-bottom: 1px solid #3a526b;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-icon {
+  font-size: 24px;
+}
+
+.sidebar-subtitle {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 10px 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background-color: #34495e;
+  color: #3498db;
+}
+
+.sidebar-link.active {
+  background-color: #3498db;
+  border-left-color: #2980b9;
+  color: white;
+}
+
+.sidebar-link.active:hover {
+  background-color: #2980b9;
+}
+
+.sidebar-link-icon {
+  font-size: 18px;
+  margin-right: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.sidebar-link-content {
+  flex: 1;
+}
+
+.sidebar-link-name {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.sidebar-link-description {
+  font-size: 11px;
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+.sidebar-footer {
+  padding: 15px 20px;
+  border-top: 1px solid #3a526b;
+  background-color: #34495e;
+}
+
+.sidebar-version {
+  font-size: 11px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .sidebar-link {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+  
+  .sidebar-link-icon {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 20px;
+  }
+  
+  .sidebar-link-content {
+    text-align: center;
+  }
+  
+  .sidebar-link-description {
+    display: none;
+  }
+}
+
+/* Scrollbar styling */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #2c3e50;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #34495e;
+  border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #3a526b;
+} 

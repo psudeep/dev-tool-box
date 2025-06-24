@@ -1,0 +1,199 @@
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  margin-left: 250px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
+
+/* Tool container styles */
+.tool-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tool-header {
+  margin-bottom: 30px;
+}
+
+.tool-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.tool-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.tool-section {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Editor styles */
+.editor-container {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.editor-toolbar {
+  background-color: #f8f9fa;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.editor-toolbar .btn {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Split layout */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  height: 500px;
+}
+
+@media (max-width: 768px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.split-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.split-panel-header {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.split-panel-content {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Result display */
+.result-container {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  padding: 16px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.result-container.success {
+  background-color: #f8fff8;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.result-container.error {
+  background-color: #fff8f8;
+  border-color: #dc3545;
+  color: #721c24;
+}
+
+/* Loading states */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+}
+
+.loading::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e9ecef;
+  border-top: 2px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Syntax highlighting for JSON */
+.json-key {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.json-string {
+  color: #009900;
+}
+
+.json-number {
+  color: #cc6600;
+}
+
+.json-boolean {
+  color: #990099;
+}
+
+.json-null {
+  color: #999999;
+} 
