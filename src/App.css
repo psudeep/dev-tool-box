@@ -12,6 +12,12 @@
   margin-left: 250px;
 }
 
+.main-content--fullscreen {
+  padding: 0;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .app {

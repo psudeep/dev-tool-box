@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import JsonFormatter from './components/JsonFormatter';
 import Decoder from './components/Decoder';
@@ -29,10 +29,14 @@ function AppContent() {
     }
   }, [navigate]);
 
+  const location = useLocation();
+  const fullscreenRoutes = ['/api-tester'];
+  const isFullscreen = fullscreenRoutes.includes(location.pathname);
+
   return (
     <div className="app">
       <Sidebar />
-      <main className="main-content">
+      <main className={`main-content${isFullscreen ? ' main-content--fullscreen' : ''}`}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/json-formatter" element={<JsonFormatter />} />
