@@ -102,6 +102,7 @@ export default function ApiTester() {
   const isDragging = useRef(false);
   const dragStartY = useRef(0);
   const dragStartH = useRef(0);
+  const mainRef = useRef(null);
 
   const onResizerMouseDown = (e) => {
     e.preventDefault();
@@ -112,7 +113,10 @@ export default function ApiTester() {
     const onMove = (ev) => {
       if (!isDragging.current) return;
       const delta = ev.clientY - dragStartY.current;
-      setReqHeight(h => Math.max(90, Math.min(600, dragStartH.current + delta)));
+      const maxH = mainRef.current
+        ? Math.floor(mainRef.current.clientHeight * 0.78)
+        : window.innerHeight * 0.78;
+      setReqHeight(Math.max(90, Math.min(maxH, dragStartH.current + delta)));
     };
     const onUp = () => {
       isDragging.current = false;
@@ -539,7 +543,7 @@ export default function ApiTester() {
       </aside>
 
       {/* ═══ MAIN ═══ */}
-      <div className="apt-main">
+      <div className="apt-main" ref={mainRef}>
 
         {/* ── Tab bar ── */}
         <div className="apt-tabbar" ref={tabsRef}>

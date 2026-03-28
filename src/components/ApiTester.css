@@ -597,17 +597,24 @@
   border: 1px solid #2e2e2e;
   border-radius: 4px;
   display: flex;
-  flex: 1;           /* takes all remaining height after the radio row */
+  flex: 1;
   flex-direction: column;
   margin-top: 8px;
   min-height: 0;
-  overflow: hidden;
+  overflow: hidden; /* clip the border-radius; CM scroller handles internal scroll */
 }
 .apt-editor-wrap--err { border-color: #f93e3e; }
 
-/* CodeMirror must fill the wrapper fully */
-.apt-editor-wrap .cm-editor { flex: 1; height: 100% !important; }
-.apt-editor-wrap .cm-scroller { overflow: auto !important; }
+/* CodeMirror fills wrapper and scrolls vertically */
+.apt-editor-wrap .cm-editor {
+  flex: 1;
+  height: 100% !important;
+  min-height: 0;
+}
+.apt-editor-wrap .cm-scroller {
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+}
 
 .apt-body-none {
   align-items: center;
